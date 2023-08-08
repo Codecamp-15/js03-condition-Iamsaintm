@@ -1,25 +1,40 @@
-let num1 = prompt("number1");
-let num2 = prompt("number2");
-let num3 = prompt("number3");
+let x = Number(prompt("number1"));
+let y = Number(prompt("number2"));
+let z = Number(prompt("number3"));
 
-if (num1 > num2) {
-  if (num2 > num3) {
-    alert(num1 + ", " + num2 + ", " + num3);
-  } else if (num3 > num2) {
-    if (num1 > num3) {
-      alert(num1 + ", " + num3 + ", " + num2);
-    } else if (num3 > num1) {
-      alert(num3 + ", " + num1 + ", " + num2);
-    }
-  }
-} else if (num2 > num1) {
-  if (num1 > num3) {
-    alert(num2 + ", " + num1 + ", " + num3);
-  } else if (num3 > num1) {
-    if (num2 > num3) {
-      alert(num2 + ", " + num3 + ", " + num1);
-    } else if (num3 > num2) {
-      alert(num3 + ", " + num2 + ", " + num1);
-    }
+let max;
+let mid;
+let min;
+
+if (x >= y && x >= z) {
+  max = x;
+  if (y >= z) {
+    mid = y;
+    min = z;
+  } else {
+    mid = z;
+    min = y;
   }
 }
+if (y >= x && y >= z) {
+  max = y;
+  if (x >= z) {
+    mid = x;
+    min = z;
+  } else {
+    mid = z;
+    min = x;
+  }
+}
+if (z >= x && z >= y) {
+  max = z;
+  if (x >= y) {
+    mid = x;
+    min = y;
+  } else {
+    mid = y;
+    min = x;
+  }
+}
+
+console.log(`${max} : ${mid} : ${min}`);
